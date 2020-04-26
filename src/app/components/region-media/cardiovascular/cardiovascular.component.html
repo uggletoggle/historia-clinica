@@ -1,0 +1,164 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            APARATO CARDIOVASCULAR
+        </mat-panel-title>
+        <mat-panel-description>
+            Paro Cardíaco
+        </mat-panel-description>
+        <mat-panel-description>
+            Normal
+        </mat-panel-description>
+        <mat-panel-description>
+            No se investigó
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-card [ngStyle]="{'width': '100%'}">
+
+        <mat-card-content>
+
+            <div class="row">
+                <div class="col">Ruidos Hipofonéticos</div>
+                <div class="col">
+                    <mat-checkbox>
+                        I
+                    </mat-checkbox>
+
+                </div>
+                <div class="col">
+                    <mat-checkbox>
+                        II
+                    </mat-checkbox>
+                </div>
+                <div class="col-6">
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    Desdoblados
+                </div>
+                <div class="col">
+                    <mat-checkbox>
+                        I
+                    </mat-checkbox>
+
+                </div>
+                <div class="col">
+                    <mat-checkbox>
+                        II
+                    </mat-checkbox>
+                </div>
+                <div class="col">
+                    <mat-checkbox>
+                        R3(+)
+                    </mat-checkbox>
+                </div>
+                <div class="col">
+                    <mat-checkbox>
+                        R4(+)
+                    </mat-checkbox>
+                </div>
+
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col">
+                    <mat-checkbox>
+                        Ingur. Yugular(+)
+                    </mat-checkbox>
+                </div>
+                <div class="col">
+                    <mat-checkbox>
+                        Galope
+                    </mat-checkbox>
+                </div>
+                <div class="col">
+                    <mat-checkbox>
+                        Frote pericárdico
+                    </mat-checkbox>
+                </div>
+                <div class="col">
+                    <mat-checkbox>
+                        Frote pericárdico
+                    </mat-checkbox>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        Soplo Diastólico
+                        <div class="col">
+                            <mat-checkbox>
+                                Foco Pul
+                            </mat-checkbox>
+                        </div>
+                        <div class="col">
+                            <mat-checkbox>
+                                Foco Aór
+                            </mat-checkbox>
+                        </div>
+                        <div class="col">
+                            <mat-checkbox>
+                                Foco Mit
+                            </mat-checkbox>
+                        </div>
+                        <div class="col">
+                            <mat-checkbox>
+                                Foco Tri
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        Soplo Sistólico
+                        <div class="col">
+                            <mat-checkbox>
+                                Foco Pul
+                            </mat-checkbox>
+
+                        </div>
+
+                        <div class="col">
+                            <mat-checkbox>
+                                Foco Aór
+                            </mat-checkbox>
+                        </div>
+                        <div class="col">
+                            <mat-checkbox>
+                                Foco Mit
+                            </mat-checkbox>
+                        </div>
+                        <div class="col">
+                            <mat-checkbox>
+                                Foco Tri
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </mat-card-content>
+
+    </mat-card>
+
+    <mat-card>
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label>Arritmia</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Pulsos Periféricos</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Otros</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>LIMPIAR</button>
+            <button mat-button>GUARDAR</button>
+        </mat-card-actions>
+    </mat-card>
+
+</mat-expansion-panel>

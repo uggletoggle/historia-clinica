@@ -1,0 +1,97 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            ABDOMEN
+        </mat-panel-title>
+        <mat-panel-description>
+            Normal
+        </mat-panel-description>
+        <mat-panel-description>
+            No se investigó
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-card [ngStyle]="{'width': '100%'}">
+
+        <mat-card-content>
+
+            <div class="row">
+                <div class="col">
+                    <div *ngFor="let item of columnaI">
+                        <mat-checkbox>
+                            {{item}}
+                        </mat-checkbox>
+                        <br>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div *ngFor="let item of columnaII">
+                        <mat-checkbox>
+                            {{item}}
+                        </mat-checkbox>
+                        <br>
+                    </div>
+                </div>
+
+
+
+                <div class="col">
+                    <div *ngFor="let item of columnaIII">
+                        <mat-checkbox>
+                            {{item}}
+                        </mat-checkbox>
+                        <br>
+                    </div>
+                </div>
+
+
+
+                <div class="col">
+                    <div *ngFor="let item of columnaIV">
+                        <div class="row">
+                            <div class="col-12">
+                                {{item}}
+                            </div>
+                            <div class="col">
+
+                                <mat-checkbox>
+                                    I
+                                </mat-checkbox>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <mat-checkbox>
+                                    D
+                                </mat-checkbox>
+
+                            </div>
+
+                        </div>
+                        <br><br>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </mat-card-content>
+
+    </mat-card>
+
+    <mat-card>
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label>Rale</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Otros</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>LIMPIAR</button>
+            <button mat-button>GUARDAR</button>
+        </mat-card-actions>
+    </mat-card>
+
+</mat-expansion-panel>
