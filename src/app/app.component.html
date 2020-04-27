@@ -12,14 +12,14 @@
     <div class="main">
 
 
-        <div [ngClass]="{'animated fadeOutUp faster altura' : listo}">
-            <app-cabecera-formulario></app-cabecera-formulario>
-        </div>
 
         <div [style.display]="mostrarSuperior" [ngClass]="{'animated fadeIn fast' : listo}">
             <app-region-superior></app-region-superior>
         </div>
         <br>
+        <div [ngClass]="{'animated fadeOut': !mostrarCabecera}">
+            <app-cabecera-formulario></app-cabecera-formulario>
+        </div>
 
         <div [style.display]="mostrarMedia" [ngClass]="{'animated fadeIn fast' : listo}">
             <h5>REGION MEDIA E INFERIOR</h5>
@@ -28,9 +28,6 @@
 
         </div>
         <br>
-
-
-
 
     </div>
 </div>
