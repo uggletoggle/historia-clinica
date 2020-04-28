@@ -80,29 +80,13 @@ export class AppComponent implements OnInit{
 
 
 
-  // @HostListener('mousemove', ['$event'])
-  // actualizarPosicion(event: MouseEvent){
-  //   if (this.width>=1800 && event.target["id"] == "img1"){
-  //     if ( event.clientY <=550 && event.clientY >=350){
-  //       this.abdomen = true;
-  //       this.cabeza = false;
-  //       this.mostrarSuperior="none"
-  //       this.mostrarMedia="block"
-  //       this.top = -940;
-  //       this.toppx = this.top+"px"
-  //     } else if (event.clientY <= 350){
-  //       this.top = -290;
-  //       this.toppx = this.top+"px"
-  //       this.mostrarSuperior="block"
-  //       this.mostrarMedia="none"
-  //       this.abdomen = false;
-  //       this.cabeza = true;
-  //     }
-  //   } else if (this.width>=800 && event.target["id"] != "img1"){
-  //     this.decrease();
-  //     this.ejecutando = true;
-  //   }
-  // }
+  @HostListener('mousemove', ['$event'])
+   actualizarPosicion(event: MouseEvent){
+   if (this.width>=800 && event.target["id"] != "img1"){
+      this.decrease();
+      this.ejecutando = true;
+     }
+   }
 
 
  
