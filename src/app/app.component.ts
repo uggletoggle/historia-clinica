@@ -82,7 +82,7 @@ export class AppComponent implements OnInit{
 
   @HostListener('mousemove', ['$event'])
    actualizarPosicion(event: MouseEvent){
-   if (this.width>=800 && event.target["id"] != "img1"){
+   if (this.width>=800 && event.target["id"] != "img1" && this.fix == false){
       this.decrease();
       this.ejecutando = true;
      }
