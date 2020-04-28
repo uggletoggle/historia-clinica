@@ -1,5 +1,5 @@
-import { Component, Directive, HostListener } from '@angular/core';
-
+import { Component, Directive, HostListener, OnInit } from '@angular/core';
+import { fromEvent, Subscriber, Observable } from 'rxjs';
 
 
 
@@ -8,7 +8,9 @@ import { Component, Directive, HostListener } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  
+  
   title = 'ng-hclinica';
 
   width = 800;
@@ -31,17 +33,40 @@ export class AppComponent {
   ejecutando = false;
   
 
-  @HostListener('mousemove', ['$event'])
-  actualizarPosicion(event: MouseEvent){
-    if (this.width>=1800 && event.target["id"] == "img1"){
-      if ( event.clientY <=550 && event.clientY >=350){
+  fix = false;
+
+  fixSuperior =false;
+  fixMedia = false;
+  fixCabecera = true;
+
+  ngOnInit(): void {
+    const el = document.getElementById('img1');
+    
+    let mouseClick = fromEvent(el, 'click');
+    let mouseMove = fromEvent(el, 'mousemove');
+
+
+    mouseClick.subscribe( (e) =>{
+      
+      if (this.width > 800 && this.width < 1800) return;
+       
+      this.fix = !this.fix;
+    
+    });
+
+    mouseMove.subscribe( (e: MouseEvent) =>{
+
+      if(this.fix) return;
+
+      if (this.width>=1800 ){
+      if ( e.clientY <=550 && e.clientY >=350){
         this.abdomen = true;
         this.cabeza = false;
         this.mostrarSuperior="none"
         this.mostrarMedia="block"
         this.top = -940;
         this.toppx = this.top+"px"
-      } else if (event.clientY <= 350){
+      } else if (e.clientY <= 350){
         this.top = -290;
         this.toppx = this.top+"px"
         this.mostrarSuperior="block"
@@ -49,39 +74,36 @@ export class AppComponent {
         this.abdomen = false;
         this.cabeza = true;
       }
-    } else if (this.width>=800 && event.target["id"] != "img1"){
-      this.decrease();
-      this.ejecutando = true;
     }
+    });
   }
 
-//   @HostListener('mouseenter', ['$event'])
-//    async actualizarTop(event: MouseEvent) {
-//      await this.delay(1);
-//      console.log(event)
-//     if (this.width < 1800){
-//     // console.log(event.target["id"]);
-//     // console.log(event.clientY)
-//     if (event.target["id"] == "img1" && event.clientY <550 && event.clientY >350){
-//       this.top = event.clientY + this.fixedTop;
-//       this.toppx = this.top+"px"
-      
-//     } 
-//   } 
-//     else{
-//       if (event.target["id"] == "img1" && event.clientY <550 && event.clientY >350){
-//         this.abdomen = true;
-//         this.cabeza = false;
-//         this.mostrarSuperior="none"
-//         this.mostrarMedia="block"
-//       } else if (event.target["id"] == "img1" && event.clientY <350){
-//         this.mostrarSuperior="block"
-//         this.mostrarMedia="none"
-//         this.abdomen = false;
-//         this.cabeza = true;
-//       }
-//     }
-//  }
+
+
+  // @HostListener('mousemove', ['$event'])
+  // actualizarPosicion(event: MouseEvent){
+  //   if (this.width>=1800 && event.target["id"] == "img1"){
+  //     if ( event.clientY <=550 && event.clientY >=350){
+  //       this.abdomen = true;
+  //       this.cabeza = false;
+  //       this.mostrarSuperior="none"
+  //       this.mostrarMedia="block"
+  //       this.top = -940;
+  //       this.toppx = this.top+"px"
+  //     } else if (event.clientY <= 350){
+  //       this.top = -290;
+  //       this.toppx = this.top+"px"
+  //       this.mostrarSuperior="block"
+  //       this.mostrarMedia="none"
+  //       this.abdomen = false;
+  //       this.cabeza = true;
+  //     }
+  //   } else if (this.width>=800 && event.target["id"] != "img1"){
+  //     this.decrease();
+  //     this.ejecutando = true;
+  //   }
+  // }
+
 
  
 async decrease(){ 
